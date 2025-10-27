@@ -1,0 +1,5 @@
+$WebClient = New-Object System.Net.WebClient
+$Win11UpgradeURL = "https://go.microsoft.com/fwlink/?linkid=2171764"
+$UpgradePath = "$env:TEMP\Windows11InstallationAssistant.exe"
+$WebClient.DownloadFile($Win11UpgradeURL, $UpgradePath)
+Start-Process -FilePath $UpgradePath -ArgumentList "/QuietInstall /SkipEULA /Auto Upgrade /NoRestartUI /copylogs $($env:TEMP)" -Wait
