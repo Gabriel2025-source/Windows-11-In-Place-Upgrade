@@ -1,8 +1,6 @@
 # Win11-Upgrade-Extracted.ps1
 # Run as Administrator
 
-set-executionpolicy bypass -force
-
 $setupPath = "\\LIB-204\Win11Upgrade\setup.exe"
 
 if (Test-Path $setupPath) {
