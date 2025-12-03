@@ -1,5 +1,13 @@
-$WebClient = New-Object System.Net.WebClient
-$Win11UpgradeURL = "https://go.microsoft.com/fwlink/?linkid=2171764"
-$UpgradePath = "$env:TEMP\Windows11InstallationAssistant.exe"
-$WebClient.DownloadFile($Win11UpgradeURL, $UpgradePath)
-Start-Process -FilePath $UpgradePath -ArgumentList "/QuietInstall /SkipEULA /Auto Upgrade /NoRestartUI /copylogs $($env:TEMP)" -Wait
+# Define the path where the folder should be created
+$folderPath = "C:\Win11testJJ"
+
+# Check if the folder exists
+if (Test-Path -Path $folderPath) {
+    # Remove it if it exists
+    Remove-Item -Path $folderPath -Recurse -Force
+}
+
+# Create the folder
+New-Item -Path $folderPath -ItemType Directory -Force
+
+Write-Host "Folder 'Win11testJJ' has been created at $folderPath"
