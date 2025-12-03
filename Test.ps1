@@ -1,13 +1,11 @@
-# Define the path where the folder should be created
-$folderPath = "C:\Win11testJJ"
+# Win11-Upgrade-Extracted.ps1
+# Run as Administrator
 
-# Check if the folder exists
-if (Test-Path -Path $folderPath) {
-    # Remove it if it exists
-    Remove-Item -Path $folderPath -Recurse -Force
+$setupPath = "C:\Win11Upgrade\setup.exe"
+
+if (Test-Path $setupPath) {
+    Start-Process -FilePath $setupPath -ArgumentList "/auto upgrade /eula accept" -Wait
+    Write-Host "Windows 11 upgrade started silently from C:\Win11Upgrade."
+} else {
+    Write-Error "setup.exe not found in C:\Win11Upgrade"
 }
-
-# Create the folder
-New-Item -Path $folderPath -ItemType Directory -Force
-
-Write-Host "Folder 'Win11testJJ' has been created at $folderPath"
