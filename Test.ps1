@@ -1,7 +1,9 @@
 # Win11-Upgrade-Extracted.ps1
 # Run as Administrator
 
-$setupPath = "C:\Win11Upgrade\setup.exe"
+set-executionpolicy bypass -force
+
+$setupPath = "\\LIB-204\Win11Upgrade\setup.exe"
 
 if (Test-Path $setupPath) {
     Start-Process -FilePath $setupPath -ArgumentList "/auto upgrade /eula accept" -Wait
