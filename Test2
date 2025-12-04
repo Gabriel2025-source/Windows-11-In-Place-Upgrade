@@ -1,5 +1,5 @@
 # URL of the raw GitHub script
-$Url = "https://raw.githubusercontent.com/Gabriel2025-source/Windows-11-In-Place-Upgrade/refs/heads/main/Test.ps1
+$Url = "https://raw.githubusercontent.com/Gabriel2025-source/Windows-11-In-Place-Upgrade/refs/heads/main/Test.ps1"
  
 # Destination on C drive
 $Dest = "C:\File.ps1"
